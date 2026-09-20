@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tracking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Dashboard Header -->
+        <header class="app-header">
+            <h1>Financial Ledger Dashboard</h1>
+            <p id="system-status">System Initialized</p>
+        </header>
+
+        <!-- Balance Metrics -->
+        <section class="summary-cards">
+            <div class="card balance-card" id="balance-status-box">
+                <h3>Net Cash Balance</h3>
+                <p id="total-balance">$0.00</p>
+                <small id="health-badge">Healthy Status</small>
+            </div>
+            <div class="row-cards">
+                <div class="card income-card">
+                    <h3>Total Income</h3>
+                    <p id="total-income">$0.00</p>
+                </div>
+                <div class="card expense-card">
+                    <h3>Total Expenses</h3>
+                    <p id="total-expense">$0.00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transaction Entry Form -->
+        <section class="form-section">
+            <h2>Add New Transaction</h2>
+            <form id="transaction-form">
+                <div class="input-group">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" placeholder="e.g., Monthly Paycheck" required>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="amount">Amount ($)</label>
+                        <input type="number" id="amount" step="0.01" min="0.01" placeholder="0.00" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="category">Category</label>
+                        <input type="text" id="category" placeholder="e.g., Salary, Housing" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="type">Transaction Type</label>
+                    <select id="type">
+                        <option value="INCOME">Income</option>
+                        <option value="EXPENSE">Expense</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Execute Transaction</button>
+            </form>
+        </section>
+
+        <!-- Transaction History Ledger -->
+        <section class="history-section">
+            <h2>Transaction History Log</h2>
+            <ul id="transaction-list" class="transaction-list">
+                <!-- Dynamically populated from backend state -->
+            </ul>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
